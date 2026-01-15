@@ -29,3 +29,72 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+
+.btn {
+    border-radius: 12px;
+    font-weight: 500;
+    padding: 6px 16px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #fbcfe8, #f9a8d4); /* светлый розовый градиент */
+    border: none;
+    color: #831843; /* тЄмный акцент */
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #f9a8d4, #f472b6); /* чуть €рче на hover */
+        box-shadow: 0 4px 10px rgba(244, 114, 182, 0.35);
+        color: #831843;
+    }
+
+/* Edit */
+.btn-warning {
+    background: linear-gradient(135deg, #93c5fd, #60a5fa);
+    color: #1e3a8a;
+}
+
+
+/* Details */
+.btn-info {
+    background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
+    color: #312e81;
+}
+
+
+/* Delete */
+.btn-danger {
+    background: linear-gradient(135deg, #fecaca, #fca5a5);
+    color: #7f1d1d;
+}
+
+
+/* spacing */
+td .btn {
+    margin-right: 6px;
+}
+
+.card {
+    border-radius: 12px;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+    .form-control:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 0.15rem rgba(99, 102, 241, 0.25);
+    }
+
+.form-label {
+    font-weight: 500;
+}
+
+.badge {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+}

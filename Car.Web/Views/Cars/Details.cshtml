@@ -1,62 +1,64 @@
 ﻿@model Car.Core.Domain.Car
 
-<h1>Details</h1>
+<h2 class="mb-4">Car Details</h2>
 
-<div>
-    <h4>Car Info</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Make)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Make)
-        </dd>
+<div class="card shadow-sm border-0">
+    <div class="card-body">
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Model)
-        </dd>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="text-muted">Make</div>
+                <div class="fw-semibold fs-5">@Model.Make</div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-muted">Model</div>
+                <div class="fw-semibold fs-5">@Model.Model</div>
+            </div>
+        </div>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Year)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Year)
-        </dd>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <div class="text-muted">Year</div>
+                <div class="fw-semibold">@Model.Year</div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-muted">Price</div>
+                <div class="fw-semibold">@Model.Price €</div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-muted">Condition</div>
+                @if (Model.IsUsed)
+                {
+                    <span class="badge bg-warning text-dark">Used</span>
+                }
+                else
+                {
+                    <span class="badge bg-success">New</span>
+                }
+            </div>
+        </div>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price) €
-        </dd>
+        <hr />
 
-        <dt class="col-sm-2">
-            Is Used?
-        </dt>
-        <dd class="col-sm-10">
-            @(Model.IsUsed ? "Yes" : "No")
-        </dd>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="text-muted">Created At</div>
+                <div>@Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")</div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-muted">Modified At</div>
+                <div>@Model.ModifiedAt.ToString("dd.MM.yyyy HH:mm")</div>
+            </div>
+        </div>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
+        <div class="mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">
+                 Edit
+            </a>
+            <a asp-action="Index" class="btn btn-outline-secondary">
+                ← Back to list
+            </a>
+        </div>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ModifiedAt)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ModifiedAt)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
 </div>

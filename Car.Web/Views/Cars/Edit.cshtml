@@ -1,35 +1,51 @@
 ﻿@model Car.Core.Domain.Car
 
-<h1>Edit Car</h1>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h2 class="mb-4">Edit Car</h2>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body">
         <form asp-action="Edit">
             <input type="hidden" asp-for="Id" />
-            <input type="hidden" asp-for="CreatedAt" /> <div class="form-group mb-3">
-                <label asp-for="Make" class="control-label"></label>
-                <input asp-for="Make" class="form-control" />
+            <input type="hidden" asp-for="CreatedAt" />
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Make" class="form-label"></label>
+                    <input asp-for="Make" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Model" class="form-label"></label>
+                    <input asp-for="Model" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Year" class="form-label"></label>
+                    <input asp-for="Year" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label asp-for="Price" class="form-label"></label>
+                    <input asp-for="Price" class="form-control" />
+                </div>
+
+                <div class="col-md-4 mb-3 d-flex align-items-end">
+                    <div class="form-check">
+                        <input class="form-check-input" asp-for="IsUsed" />
+                        <label class="form-check-label" asp-for="IsUsed">
+                            Used car
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3">
-                <label asp-for="Model" class="control-label"></label>
-                <input asp-for="Model" class="form-control" />
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Year" class="control-label"></label>
-                <input asp-for="Year" class="form-control" />
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-            </div>
-            <div class="form-group form-check mb-3">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsUsed" /> Is Used?
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary me-2">
+                     Save
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    ← Back
+                </a>
             </div>
         </form>
     </div>
